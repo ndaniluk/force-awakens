@@ -1,4 +1,4 @@
-# force-awakens
+# Force Awakens
 Mechanism for creating RPG character. Player can choose one of the following races. Every race has special abilities. Next step is to choose profession (max 2) and decide which way player wants to develop his/her character. Every profession gives new abilities to created character.
 
  | Race | Abilities |
