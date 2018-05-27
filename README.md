@@ -16,5 +16,5 @@ Mechanism for creating RPG character. Player can choose one of the following rac
 | Armorer | Equipment repair |
 | Hunter | Sneaking, archery |
 
-Used design pattern: Decorator
+Used design pattern: Decorator  
 Character's informations are saved to file.
