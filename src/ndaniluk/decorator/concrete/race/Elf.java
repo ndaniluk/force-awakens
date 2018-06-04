@@ -1,13 +1,13 @@
 package ndaniluk.decorator.concrete.race;
 
-public class Human implements Race {
+public class Elf implements Race {
     @Override
     public String getName() {
-        return "Human";
+        return "Elf";
     }
 
     @Override
     public String getAbilities() {
-        return "None";
+        return "Seeing in the dark, super agility";
     }
 }
