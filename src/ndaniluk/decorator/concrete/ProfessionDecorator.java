@@ -4,23 +4,48 @@ import ndaniluk.component.CharacterComponent;
 import ndaniluk.decorator.CharacterDecorator;
 import ndaniluk.decorator.concrete.profession.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProfessionDecorator extends CharacterDecorator {
 
-    private ProfessionList chosenProfessionName;
-    private Profession profession;
+    private List<ProfessionEnum> professionNamesList;
+    private List<Profession> professionList;
 
-    public ProfessionDecorator(ProfessionList chosenProfession, CharacterComponent decoratedCharacter) {
+    public ProfessionDecorator(ProfessionEnum chosenProfessionName, CharacterComponent decoratedCharacter) {
         super(decoratedCharacter);
-        this.chosenProfessionName = chosenProfession;
-        this.profession = chooseProfession(chosenProfessionName);
+        professionNamesList = new ArrayList<>();
+        professionList = new ArrayList<>();
+
+        professionNamesList.add(chosenProfessionName);
+        create();
+    }
+
+    public ProfessionDecorator(ProfessionEnum chosenProfessionName1, ProfessionEnum chosenProfessionName2, CharacterComponent decoratedCharacter) {
+        super(decoratedCharacter);
+        professionNamesList = new ArrayList<>();
+        professionList = new ArrayList<>();
+
+        professionNamesList.add(chosenProfessionName1);
+        professionNamesList.add(chosenProfessionName2);
+        create();
     }
 
     @Override
     public String getDescription() {
-        return decoratedCharacter.getDescription() + "\n" + profession.getName() + "'s abilities: " + profession.getAbilities();
+        if(professionList.size() == 1)
+            return decoratedCharacter.getDescription() + "\n" + professionList.get(0).getName() + "'s abilities: " + professionList.get(0).getAbilities();
+        else
+            return decoratedCharacter.getDescription() + "\n" + professionList.get(0).getName() + "'s abilities: " + professionList.get(0).getAbilities()
+                    + "\n" + professionList.get(1).getName() + "'s abilities: " + professionList.get(1).getAbilities();
     }
 
-    private Profession chooseProfession(ProfessionList profession){
+    private void create(){
+        for(ProfessionEnum profession : professionNamesList)
+            professionList.add(chooseProfession(profession));
+    }
+
+    private Profession chooseProfession(ProfessionEnum profession){
         switch (profession){
             case ARMORER:
                 return new Armorer();
