@@ -1,8 +1,8 @@
-package ndaniluk.decorator.concrete;
+package ndaniluk.force.awakens.decorator.concrete;
 
-import ndaniluk.component.CharacterComponent;
-import ndaniluk.decorator.CharacterDecorator;
-import ndaniluk.decorator.concrete.profession.*;
+import ndaniluk.force.awakens.component.CharacterComponent;
+import ndaniluk.force.awakens.decorator.CharacterDecorator;
+import ndaniluk.force.awakens.decorator.concrete.profession.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,20 +33,24 @@ public class ProfessionDecorator extends CharacterDecorator {
 
     @Override
     public String getDescription() {
-        if(ProfessionList.size() == 1)
+        if (ProfessionList.size() == 1)
             return decoratedCharacter.getDescription() + "\n" + ProfessionList.get(0).getName() + "'s abilities: " + ProfessionList.get(0).getAbilities();
         else
             return decoratedCharacter.getDescription() + "\n" + ProfessionList.get(0).getName() + "'s abilities: " + ProfessionList.get(0).getAbilities()
                     + "\n" + ProfessionList.get(1).getName() + "'s abilities: " + ProfessionList.get(1).getAbilities();
     }
 
-    private void create(){
-        for(EProfession profession : professionNamesList)
+    public List<IProfession> getProfessionList() {
+        return ProfessionList;
+    }
+
+    private void create() {
+        for (EProfession profession : professionNamesList)
             ProfessionList.add(chooseProfession(profession));
     }
 
-    private IProfession chooseProfession(EProfession profession){
-        switch (profession){
+    private IProfession chooseProfession(EProfession profession) {
+        switch (profession) {
             case ARMORER:
                 return new Armorer();
 

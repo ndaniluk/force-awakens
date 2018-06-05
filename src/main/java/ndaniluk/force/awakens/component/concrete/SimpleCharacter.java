@@ -1,6 +1,6 @@
-package ndaniluk.component.concrete;
+package ndaniluk.force.awakens.component.concrete;
 
-import ndaniluk.component.CharacterComponent;
+import ndaniluk.force.awakens.component.CharacterComponent;
 
 public class SimpleCharacter implements CharacterComponent {
     @Override

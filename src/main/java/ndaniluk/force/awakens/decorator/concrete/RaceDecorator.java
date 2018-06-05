@@ -1,8 +1,8 @@
-package ndaniluk.decorator.concrete;
+package ndaniluk.force.awakens.decorator.concrete;
 
-import ndaniluk.component.CharacterComponent;
-import ndaniluk.decorator.CharacterDecorator;
-import ndaniluk.decorator.concrete.race.*;
+import ndaniluk.force.awakens.component.CharacterComponent;
+import ndaniluk.force.awakens.decorator.CharacterDecorator;
+import ndaniluk.force.awakens.decorator.concrete.race.*;
 
 public class RaceDecorator extends CharacterDecorator {
 
@@ -18,8 +18,12 @@ public class RaceDecorator extends CharacterDecorator {
         return decoratedCharacter.getDescription() + "\n" + race.getName() + "'s abilities: " + race.getAbilities();
     }
 
-    private IRace chooseRace(ERace raceName){
-        switch (raceName){
+    public IRace getRace() {
+        return race;
+    }
+
+    private IRace chooseRace(ERace raceName) {
+        switch (raceName) {
             case HUMAN:
                 return new Human();
 

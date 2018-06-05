@@ -1,4 +1,4 @@
-package ndaniluk.decorator.concrete.race;
+package ndaniluk.force.awakens.decorator.concrete.race;
 
 public class Rogue implements IRace {
     @Override

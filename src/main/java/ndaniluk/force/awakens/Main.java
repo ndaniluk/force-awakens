@@ -1,11 +1,11 @@
-package ndaniluk;
+package ndaniluk.force.awakens;
 
-import ndaniluk.component.CharacterComponent;
-import ndaniluk.component.concrete.SimpleCharacter;
-import ndaniluk.decorator.concrete.ProfessionDecorator;
-import ndaniluk.decorator.concrete.RaceDecorator;
-import ndaniluk.decorator.concrete.profession.EProfession;
-import ndaniluk.decorator.concrete.race.ERace;
+import ndaniluk.force.awakens.component.CharacterComponent;
+import ndaniluk.force.awakens.component.concrete.SimpleCharacter;
+import ndaniluk.force.awakens.decorator.concrete.ProfessionDecorator;
+import ndaniluk.force.awakens.decorator.concrete.RaceDecorator;
+import ndaniluk.force.awakens.decorator.concrete.profession.EProfession;
+import ndaniluk.force.awakens.decorator.concrete.race.ERace;
 
 public class Main {
     public static void main(String[] args) {
