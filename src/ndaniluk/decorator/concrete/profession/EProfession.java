@@ -1,6 +1,6 @@
 package ndaniluk.decorator.concrete.profession;
 
-public enum ProfessionEnum {
+public enum EProfession {
     ARMORER,
     HUNTER,
     KILLER,

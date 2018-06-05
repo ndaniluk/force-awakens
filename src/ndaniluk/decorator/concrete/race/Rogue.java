@@ -1,6 +1,6 @@
 package ndaniluk.decorator.concrete.race;
 
-public class Rogue implements Race {
+public class Rogue implements IRace {
     @Override
     public String getName() {
         return "Rogue";

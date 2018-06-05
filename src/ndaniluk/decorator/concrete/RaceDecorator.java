@@ -6,22 +6,20 @@ import ndaniluk.decorator.concrete.race.*;
 
 public class RaceDecorator extends CharacterDecorator {
 
-    private RaceList chosenRaceName;
-    private Race chosenRace;
+    private IRace race;
 
-    public RaceDecorator(RaceList chosenRaceName, CharacterComponent decoratedCharacter) {
+    public RaceDecorator(ERace raceName, CharacterComponent decoratedCharacter) {
         super(decoratedCharacter);
-        this.chosenRaceName = chosenRaceName;
-        this.chosenRace = chooseProfession(chosenRaceName);
+        this.race = chooseRace(raceName);
     }
 
     @Override
     public String getDescription() {
-        return decoratedCharacter.getDescription() + "\n" + chosenRace.getName() + "'s abilities: " + chosenRace.getAbilities();
+        return decoratedCharacter.getDescription() + "\n" + race.getName() + "'s abilities: " + race.getAbilities();
     }
 
-    private Race chooseProfession(RaceList profession){
-        switch (profession){
+    private IRace chooseRace(ERace raceName){
+        switch (raceName){
             case HUMAN:
                 return new Human();
 

@@ -1,6 +1,6 @@
 package ndaniluk.decorator.concrete.profession;
 
-public interface Profession {
+public interface IProfession {
     String getName();
     String getAbilities();
 }

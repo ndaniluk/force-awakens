@@ -1,6 +1,6 @@
 package ndaniluk.decorator.concrete.profession;
 
-public class Hunter implements Profession {
+public class Hunter implements IProfession {
     @Override
     public String getName() {
         return "Hunter";

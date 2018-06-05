@@ -1,6 +1,6 @@
 package ndaniluk.decorator.concrete.race;
 
-public enum RaceList {
+public enum ERace {
     HUMAN,
     ELF,
     DWARF,

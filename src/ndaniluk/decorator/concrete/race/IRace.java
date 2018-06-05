@@ -1,6 +1,6 @@
 package ndaniluk.decorator.concrete.race;
 
-public interface Race {
+public interface IRace {
     String getName();
     String getAbilities();
 }
