@@ -1,5 +1,8 @@
 package ndaniluk.force.awakens.component;
 
+import ndaniluk.force.awakens.decorator.concrete.race.ERace;
+
 public interface CharacterComponent {
-    public String getDescription();
+  String getName();
+  String getDescription();
 }
