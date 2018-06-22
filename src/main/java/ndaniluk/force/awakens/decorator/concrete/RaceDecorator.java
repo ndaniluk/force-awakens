@@ -23,7 +23,7 @@ public class RaceDecorator extends CharacterDecorator {
     return decoratedCharacter.getDescription()
         + "\n"
         + race.getName()
-        + "'Klasa abilities: "
+        + "'s abilities: "
         + race.getAbilities();
   }
 

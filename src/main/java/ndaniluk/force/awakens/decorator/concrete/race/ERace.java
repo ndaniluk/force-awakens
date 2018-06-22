@@ -4,5 +4,5 @@ public enum ERace {
   HUMAN,
   ELF,
   DWARF,
-  ROGUE;
+  ROGUE
 }

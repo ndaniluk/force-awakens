@@ -46,17 +46,17 @@ public class ProfessionDecorator extends CharacterDecorator {
       return decoratedCharacter.getDescription()
           + "\n"
           + ProfessionList.get(0).getName()
-          + "'Klasa abilities: "
+          + "'s abilities: "
           + ProfessionList.get(0).getAbilities();
     else
       return decoratedCharacter.getDescription()
           + "\n"
           + ProfessionList.get(0).getName()
-          + "'Klasa abilities: "
+          + "'s abilities: "
           + ProfessionList.get(0).getAbilities()
           + "\n"
           + ProfessionList.get(1).getName()
-          + "'Klasa abilities: "
+          + "'s abilities: "
           + ProfessionList.get(1).getAbilities();
   }
 

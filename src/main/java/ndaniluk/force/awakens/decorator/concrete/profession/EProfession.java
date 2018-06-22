@@ -5,5 +5,5 @@ public enum EProfession {
   HUNTER,
   KILLER,
   MAGE,
-  WARRIOR;
+  WARRIOR
 }
