@@ -3,12 +3,8 @@ package ndaniluk.force.awakens;
 
 import ndaniluk.force.awakens.decorator.concrete.profession.EProfession;
 import ndaniluk.force.awakens.decorator.concrete.race.ERace;
-import ndaniluk.force.awakens.decorator.concrete.race.Rogue;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class AttributesSelector {
     public ERace selectRace(){
@@ -17,11 +13,12 @@ public class AttributesSelector {
         System.out.println("Select race:");
         int i = 1;
         for(ERace race : raceList) {
-            System.out.println("[" + i + "] " + raceList.get(i-1));
-            i++;
+            System.out.println("[" + i++ + "] " + race);
         }
-        Scanner scanner = new Scanner(System.in);
-        switch (scanner.nextInt()){
+        Scanner scannerInt = new Scanner(System.in);
+        int selectedRace = inputSelection();
+
+        switch (selectedRace){
             case 1:
                 return ERace.HUMAN;
 
@@ -46,12 +43,14 @@ public class AttributesSelector {
         System.out.println("Select profession:");
         int i = 1;
         for(EProfession profession : professionList) {
-            System.out.println("[" + i + "] " + professionList.get(i - 1));
-            i++;
+            System.out.println("[" + i++ + "] " + profession);
         }
 
-        Scanner scanner = new Scanner(System.in);
-        switch (scanner.nextInt()){
+        Scanner scannerInt = new Scanner(System.in);
+
+        int selectedProfession = inputSelection();
+
+        switch (selectedProfession){
             case 1:
                 return EProfession.ARMORER;
 
@@ -71,5 +70,21 @@ public class AttributesSelector {
                 return null;
         }
 
+    }
+
+    private int inputSelection(){
+        Scanner scannerInt = new Scanner(System.in);
+        int selection = 0;
+        while(true) {
+            try {
+                selection = scannerInt.nextInt();
+            } catch (InputMismatchException e){
+                System.out.println("Please try again...");
+                scannerInt.nextLine();
+                continue;
+            }
+            break;
+        }
+        return selection;
     }
 }

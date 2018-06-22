@@ -30,7 +30,13 @@ public class Main {
     int professionCounter = 0;
     Scanner scannerInt = new Scanner(System.in);
     while(professionCounter < 1 || professionCounter > 2) {
-      professionCounter = scannerInt.nextInt();
+      try {
+        professionCounter = scannerInt.nextInt();
+      }catch (InputMismatchException e) {
+        System.out.println("Please try again...");
+        scannerInt.nextLine();
+        continue;
+      }
       if (professionCounter < 1 || professionCounter > 2)
         System.out.println("Please try again...");
     }
