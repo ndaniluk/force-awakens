@@ -1,11 +1,16 @@
 package ndaniluk.force.awakens.decorator.concrete;
 
-import ndaniluk.force.awakens.component.CharacterComponent;
-import ndaniluk.force.awakens.decorator.CharacterDecorator;
-import ndaniluk.force.awakens.decorator.concrete.profession.*;
-
 import java.util.ArrayList;
 import java.util.List;
+import ndaniluk.force.awakens.component.CharacterComponent;
+import ndaniluk.force.awakens.decorator.CharacterDecorator;
+import ndaniluk.force.awakens.decorator.concrete.profession.Armorer;
+import ndaniluk.force.awakens.decorator.concrete.profession.EProfession;
+import ndaniluk.force.awakens.decorator.concrete.profession.Hunter;
+import ndaniluk.force.awakens.decorator.concrete.profession.IProfession;
+import ndaniluk.force.awakens.decorator.concrete.profession.Killer;
+import ndaniluk.force.awakens.decorator.concrete.profession.Mage;
+import ndaniluk.force.awakens.decorator.concrete.profession.Warrior;
 
 public class ProfessionDecorator extends CharacterDecorator {
 
@@ -42,13 +47,13 @@ public class ProfessionDecorator extends CharacterDecorator {
 
   @Override
   public String getDescription() {
-    if (ProfessionList.size() == 1)
+    if (ProfessionList.size() == 1) {
       return decoratedCharacter.getDescription()
           + "\n"
           + ProfessionList.get(0).getName()
           + "'s abilities: "
           + ProfessionList.get(0).getAbilities();
-    else
+    } else {
       return decoratedCharacter.getDescription()
           + "\n"
           + ProfessionList.get(0).getName()
@@ -58,6 +63,7 @@ public class ProfessionDecorator extends CharacterDecorator {
           + ProfessionList.get(1).getName()
           + "'s abilities: "
           + ProfessionList.get(1).getAbilities();
+    }
   }
 
   public List<IProfession> getProfessionList() {
@@ -65,8 +71,9 @@ public class ProfessionDecorator extends CharacterDecorator {
   }
 
   private void create() {
-    for (EProfession profession : professionNamesList)
+    for (EProfession profession : professionNamesList) {
       ProfessionList.add(chooseProfession(profession));
+    }
   }
 
   private IProfession chooseProfession(EProfession profession) {

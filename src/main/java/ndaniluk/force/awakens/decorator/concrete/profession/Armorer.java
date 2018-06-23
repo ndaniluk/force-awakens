@@ -1,6 +1,7 @@
 package ndaniluk.force.awakens.decorator.concrete.profession;
 
 public class Armorer implements IProfession {
+
   @Override
   public String getName() {
     return "Armorer";

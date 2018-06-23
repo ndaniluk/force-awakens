@@ -1,6 +1,7 @@
 package ndaniluk.force.awakens.decorator.concrete.race;
 
 public class Elf implements IRace {
+
   @Override
   public String getName() {
     return "Elf";

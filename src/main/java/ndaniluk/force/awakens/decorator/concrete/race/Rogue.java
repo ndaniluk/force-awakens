@@ -1,6 +1,7 @@
 package ndaniluk.force.awakens.decorator.concrete.race;
 
 public class Rogue implements IRace {
+
   @Override
   public String getName() {
     return "Rogue";

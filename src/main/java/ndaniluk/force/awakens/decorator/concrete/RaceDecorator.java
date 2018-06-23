@@ -2,7 +2,12 @@ package ndaniluk.force.awakens.decorator.concrete;
 
 import ndaniluk.force.awakens.component.CharacterComponent;
 import ndaniluk.force.awakens.decorator.CharacterDecorator;
-import ndaniluk.force.awakens.decorator.concrete.race.*;
+import ndaniluk.force.awakens.decorator.concrete.race.Dwarf;
+import ndaniluk.force.awakens.decorator.concrete.race.ERace;
+import ndaniluk.force.awakens.decorator.concrete.race.Elf;
+import ndaniluk.force.awakens.decorator.concrete.race.Human;
+import ndaniluk.force.awakens.decorator.concrete.race.IRace;
+import ndaniluk.force.awakens.decorator.concrete.race.Rogue;
 
 public class RaceDecorator extends CharacterDecorator {
 
