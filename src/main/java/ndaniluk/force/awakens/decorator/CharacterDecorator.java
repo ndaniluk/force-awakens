@@ -4,9 +4,9 @@ import ndaniluk.force.awakens.component.CharacterComponent;
 
 public abstract class CharacterDecorator implements CharacterComponent {
 
-  protected CharacterComponent decoratedCharacter;
+    protected CharacterComponent decoratedCharacter;
 
-  public CharacterDecorator(CharacterComponent decoratedCharacter) {
-    this.decoratedCharacter = decoratedCharacter;
-  }
+    public CharacterDecorator(CharacterComponent decoratedCharacter) {
+        this.decoratedCharacter = decoratedCharacter;
+    }
 }

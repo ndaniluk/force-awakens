@@ -2,7 +2,7 @@ package ndaniluk.force.awakens.component;
 
 public interface CharacterComponent {
 
-  String getName();
+    String getName();
 
-  String getDescription();
+    String getDescription();
 }

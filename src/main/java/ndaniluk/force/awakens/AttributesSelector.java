@@ -1,94 +1,91 @@
 package ndaniluk.force.awakens;
 
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
 import ndaniluk.force.awakens.decorator.concrete.profession.EProfession;
 import ndaniluk.force.awakens.decorator.concrete.race.ERace;
 
+import java.util.*;
+
 public class AttributesSelector {
 
-  public ERace selectRace() {
-    List<ERace> raceList = new ArrayList<>(EnumSet.allOf(ERace.class));
+    public ERace selectRace() {
+        List<ERace> raceList = new ArrayList<>(EnumSet.allOf(ERace.class));
 
-    System.out.println("Select race:");
-    int i = 1;
-    for (ERace race : raceList) {
-      System.out.println("[" + i++ + "] " + race);
-    }
-    Scanner scannerInt = new Scanner(System.in);
-    int selectedRace = inputSelection();
+        System.out.println("Select race:");
+        int i = 1;
+        for (ERace race : raceList) {
+            System.out.println("[" + i++ + "] " + race);
+        }
+        Scanner scannerInt = new Scanner(System.in);
+        int selectedRace = inputSelection();
 
-    switch (selectedRace) {
-      case 1:
-        return ERace.HUMAN;
+        switch (selectedRace) {
+            case 1:
+                return ERace.HUMAN;
 
-      case 2:
-        return ERace.ELF;
+            case 2:
+                return ERace.ELF;
 
-      case 3:
-        return ERace.DWARF;
+            case 3:
+                return ERace.DWARF;
 
-      case 4:
-        return ERace.ROGUE;
+            case 4:
+                return ERace.ROGUE;
 
-      default:
-        return null;
-    }
+            default:
+                return null;
+        }
 
-  }
-
-  public EProfession selectProfession() {
-    List<EProfession> professionList = new ArrayList<>(EnumSet.allOf(EProfession.class));
-
-    System.out.println("Select profession:");
-    int i = 1;
-    for (EProfession profession : professionList) {
-      System.out.println("[" + i++ + "] " + profession);
     }
 
-    Scanner scannerInt = new Scanner(System.in);
+    public EProfession selectProfession() {
+        List<EProfession> professionList = new ArrayList<>(EnumSet.allOf(EProfession.class));
 
-    int selectedProfession = inputSelection();
+        System.out.println("Select profession:");
+        int i = 1;
+        for (EProfession profession : professionList) {
+            System.out.println("[" + i++ + "] " + profession);
+        }
 
-    switch (selectedProfession) {
-      case 1:
-        return EProfession.ARMORER;
+        Scanner scannerInt = new Scanner(System.in);
 
-      case 2:
-        return EProfession.HUNTER;
+        int selectedProfession = inputSelection();
 
-      case 3:
-        return EProfession.KILLER;
+        switch (selectedProfession) {
+            case 1:
+                return EProfession.ARMORER;
 
-      case 4:
-        return EProfession.MAGE;
+            case 2:
+                return EProfession.HUNTER;
 
-      case 5:
-        return EProfession.WARRIOR;
+            case 3:
+                return EProfession.KILLER;
 
-      default:
-        return null;
+            case 4:
+                return EProfession.MAGE;
+
+            case 5:
+                return EProfession.WARRIOR;
+
+            default:
+                return null;
+        }
+
     }
 
-  }
-
-  private int inputSelection() {
-    Scanner scannerInt = new Scanner(System.in);
-    int selection = 0;
-    while (true) {
-      try {
-        selection = scannerInt.nextInt();
-      } catch (InputMismatchException e) {
-        System.out.println("Please try again...");
-        scannerInt.nextLine();
-        continue;
-      }
-      break;
+    private int inputSelection() {
+        Scanner scannerInt = new Scanner(System.in);
+        int selection = 0;
+        while (true) {
+            try {
+                selection = scannerInt.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Please try again...");
+                scannerInt.nextLine();
+                continue;
+            }
+            break;
+        }
+        return selection;
     }
-    return selection;
-  }
 }
